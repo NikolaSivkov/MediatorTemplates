@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
 using _namespaceRoot_.Model;
+using _namespaceRoot_.Services.UnitOfWork;
 
 namespace _namespaceRoot_.Infrastructure.Commands
 {
