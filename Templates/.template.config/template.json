@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Nikola Sivkov",
+    "identity": "CommandsGenerator",
+    "name": "Commands Generator",
+    "shortName": "cg",
+    "symbols": {
+        "typeName": {
+            "type": "parameter",
+            "isRequired": true
+        },
+        "namespaceRoot": {
+            "type": "parameter",
+            "isRequired": true,
+            "replaces": "_namespaceRoot_"
+        },
+        "RenameFileNames": {
+            "type": "generated",
+            "replaces": "__typeName__",
+            "fileRename": "__typeName__",
+            "generator": "coalesce",
+            "parameters": {
+                "defaultValue": "",
+                "fallbackVariableName": "",
+                "sourceVariableName": "typeName"
+            }
+        },
+        "ReplaceInFilesFiles": {
+            "type": "generated",
+            "replaces": "_typeName_",
+            "generator": "coalesce",
+            "parameters": {
+                "defaultValue": "",
+                "fallbackVariableName": "",
+                "sourceVariableName": "typeName"
+            }
+        }
+    }
+}
