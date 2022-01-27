@@ -5,7 +5,7 @@ using System;
 
 namespace _namespaceRoot_.Infrastructure.Commands
 {
-    public class Update_typeName_Command : _typeName_Dto, IRequest<bool>
+    public class Update_typeName_Command : Update_typeName_Dto, IRequest<bool>
     {
         public Guid Id { get; set; }
     }
