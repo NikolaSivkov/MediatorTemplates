@@ -29,7 +29,7 @@ namespace _namespaceRoot_.Infrastructure.Commands
 
             var _typeName_ = map.Map<Delete_typeName_Command, _typeName_>(request);
 
-            await mainPumpRepo.DeleteAsync(mainPump);
+            await _typeName_Repo.DeleteAsync(_typeName_);
             return _typeName_;
         }
     }
