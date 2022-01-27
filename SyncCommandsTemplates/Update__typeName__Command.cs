@@ -1,0 +1,13 @@
+﻿using MediatR;
+using _namespaceRoot_.Infrastructure.Dtos;
+using _namespaceRoot_.Model;
+using System;
+using Ondo.Shared.DTO;
+
+namespace _namespaceRoot_.Infrastructure.Commands
+{
+    public class Update_typeName_Command : Update_typeName_Dto, IRequest<bool>
+    {
+        public Guid Id { get; set; }
+    }
+}
