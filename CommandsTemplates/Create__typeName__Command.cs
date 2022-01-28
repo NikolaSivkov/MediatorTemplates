@@ -5,7 +5,7 @@ using System;
 
 namespace _namespaceRoot_.Infrastructure.Commands
 {
-    public class Create_typeName_Command : _typeName_Dto, IRequest<_typeName_>
+    public class Create_typeName_Command : Create_typeName_Dto, IRequest<_typeName_>
     {
 
     }

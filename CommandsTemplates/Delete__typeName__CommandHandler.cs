@@ -27,7 +27,7 @@ namespace _namespaceRoot_.Infrastructure.Commands
         {
             logger.LogInformation("Delete _typeName_ Command");
 
-            var _typeName_ = map.Map<Delete_typeName_Command, _typeName_>(request);
+            var _typeName_ = await _typeName_Repo.GetByIdAsync(request.Id);
 
             await _typeName_Repo.DeleteAsync(_typeName_);
             return _typeName_;

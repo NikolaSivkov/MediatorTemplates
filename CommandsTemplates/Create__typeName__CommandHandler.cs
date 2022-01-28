@@ -6,7 +6,7 @@ using _namespaceRoot_.Services.UnitOfWork;
 
 namespace _namespaceRoot_.Infrastructure.Commands
 {
-    public class Create_typeName_CommandHandler : IRequestHandler<_typeName_Command, _typeName_>
+    public class Create_typeName_CommandHandler : IRequestHandler<Create_typeName_Command, _typeName_>
     {
         private readonly ILogger<Create_typeName_CommandHandler> logger;
         private readonly IMapper map;
