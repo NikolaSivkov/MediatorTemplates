@@ -1,9 +1,9 @@
-﻿using AutoMapper;
+using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.SignalR;
-using Ondo.Shared.Enums;
-using Ondo.Shared.Models.Messaging;
+using _namespaceRoot_.Shared.Enums;
+using _namespaceRoot_.Shared.Models.Messaging;
 using _namespaceRoot_.Hubs;
 using _namespaceRoot_.Infrastructure.DomainServices;
 using _namespaceRoot_.Infrastructure.Services;
@@ -48,16 +48,16 @@ namespace _namespaceRoot_.Infrastructure.Commands
 
             var irrInfra = await irrigationInfrastructureRepo.GetByIdAsync(request.IrrigationInfrastructureId);
 
-            var cReq = new CloudRequest<Ondo.Shared.DTO.Create_typeName_Dto>
+            var cReq = new CloudRequest<_namespaceRoot_.Shared.DTO.Create_typeName_Dto>
             {
-                Message = mapper.Map<Create_typeName_Command, Ondo.Shared.DTO.Create_typeName_Dto>(request)
+                Message = mapper.Map<Create_typeName_Command, _namespaceRoot_.Shared.DTO.Create_typeName_Dto>(request)
             };
 
             var connectionId = connectionMapping.Get(irrInfra.ControllerId.ToString());
 
             await hubContext.Clients.Client(connectionId).SendAsync(CloudEndpointsEnum.Create_typeName_, cReq, cancellationToken: cancellationToken);
 
-            var response = await messageDispatcher.AwaitCommandResponse<Ondo.Shared.DTO._typeName_Dto>(cReq.Id, cancellationToken, 5000);
+            var response = await messageDispatcher.AwaitCommandResponse<_namespaceRoot_.Shared.DTO._typeName_Dto>(cReq.Id, cancellationToken, 5000);
 
             if (response == null || (response.Errors?.Any() ?? false))
             {
